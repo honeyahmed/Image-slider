@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.gallery-container {
+  padding: 0.9375rem 0;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    height: 350px;
+  }
+  div {
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    &:hover {
+      opacity: 1;
+      transition: 0.5s opacity ease;
+    }
+  }
+
+  .overlay {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: white;
+      font-size: 40px;
+    }
+    opacity: 0;
+  }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  .sliderContent {
+    height: 450px;
+    text-align: center;
+    position: relative;
+    .close {
+      color: white;
+      position: absolute;
+      right: 14px;
+      top: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .leftArrow {
+      position: absolute;
+      font-size: 30px;
+      top: 50%;
+      color: white;
+      left: 40px;
+      cursor: pointer;
+    }
+    .rightArrow {
+      position: absolute;
+      font-size: 30px;
+      top: 50%;
+      color: white;
+      right: 40px;
+      cursor: pointer;
+    }
+    span {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .imgTitle {
+      position: absolute;
+      right: 0;
+      left: 0;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      bottom: 0;
+      color: white;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1020px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
